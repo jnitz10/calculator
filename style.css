@@ -5,5 +5,46 @@ body {
 .calcBody {
     width: 400px;
     height: 600px;
+    display: flex;
+    flex-direction: column;
     border: 1px solid black;
+}
+
+#screen {
+    margin: 10px;
+    margin-bottom: 0px;
+    border: 1px solid black;
+}
+
+.row {
+    flex-grow: 1;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#clearDelete {
+    display: flex;
+    flex-direction: row;
+}
+
+#clear {
+    flex-grow: 1;
+    margin: 20px;
+    border: .5px solid lightslategray;
+}
+
+#delete {
+    flex-grow: 1;
+    margin: 20px;
+    border: .5px solid lightslategray;
+}
+
+.key {
+    margin: 5px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .5px solid lightslategray;
 }
