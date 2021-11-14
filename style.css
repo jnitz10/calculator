@@ -14,6 +14,8 @@ body {
     margin: 10px;
     margin-bottom: 0px;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
 }
 
 .row {
@@ -21,6 +23,12 @@ body {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.line {
+    border: .25px solid gray;
+    flex-grow: 1;
+    text-align: right;
 }
 
 #clearDelete {
@@ -32,12 +40,18 @@ body {
     flex-grow: 1;
     margin: 20px;
     border: .5px solid lightslategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #delete {
     flex-grow: 1;
     margin: 20px;
     border: .5px solid lightslategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .key {

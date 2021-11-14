@@ -33,6 +33,9 @@ function operate(x, op, y) {
     }
 
 }
-
+const topLine = document.getElementById('topLine');
 const keys = Array.from(document.querySelectorAll('.key'));
-keys.forEach(key => key.addEventListener('click', function() {console.log(key.innerHTML)}));
+keys.forEach(key => key.addEventListener('click', function() {
+    console.log(key.innerHTML);
+    topLine.innerHTML += key.innerHTML;
+    }));
