@@ -62,3 +62,12 @@ body {
     align-items: center;
     border: .5px solid lightslategray;
 }
+
+.numbers {
+    margin: 5px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .5px solid lightslategray;
+}
