@@ -1,8 +1,5 @@
 
 
-// const del = document.getElementById('zero');
-
-// del.addEventListener('mousedown', function() {console.log("sdf")});
 
 const keyVals = [
     {
@@ -67,6 +64,14 @@ const keyVals = [
     }
 ]
 
+function getKeyVal(name) { // function to match calc key ID with needed value
+    for (const x of keyVals) {
+        if (name === x.keyName) {
+            return x.keyVal;
+        }
+    }
+}
+
 
 function add(x, y) {
     return Number(x) + Number(y);
@@ -122,13 +127,24 @@ class Stack {
             return this.data.pop(); 
         }
     }
+    print() {
+        var top = this.top - 1;
+        while(top >= 0) {
+            console.log(this.data[top]);
+            top--;
+        }
+    }
 }
+
+let topLineStack = new Stack;
 const topLine = document.getElementById('topLine');
-const keys = Array.from(document.querySelectorAll('.key'));
-keys.forEach(key => key.addEventListener('click', function() {
-    console.log(key.id);
-    topLine.innerHTML += key.id;
-    }));
+const numbers = Array.from(document.querySelectorAll('.numbers'));
+numbers.forEach(num => num.addEventListener('click', function() {
+    topLineStack.push(getKeyVal(num.id));
+    console.log(getKeyVal(num.id));
+    // TODO: display numbers on top line
+}));
+
 
 const clear = document.getElementById('clear');
 clear.addEventListener('click', function() {
@@ -137,5 +153,5 @@ clear.addEventListener('click', function() {
 
 const del = document.getElementById('delete');
 del.addEventListener('click', function() {
-    topLine.innerHTML = topLine.innerHTML.slice(0,-1);
+    topLineStack.pop();
 });
